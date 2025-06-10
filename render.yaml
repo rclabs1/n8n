@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: n8n-rom
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npx n8n
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: romadmin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: securepass456
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: dpg-d13vbhp5pdvs73fvk3ng-a
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        value: n8n_hnow
+      - key: DB_POSTGRESDB_USER
+        value: n8n_user
+      - key: DB_POSTGRESDB_PASSWORD
+        value: A8W5cCl7JpLcw1OzwoQbYUn2GEDerRa1
+      - key: N8N_HOST
+        value: automation.thecheerlab.com
+      - key: N8N_PORT
+        value: 10000
+      - key: WEBHOOK_URL
+        value: https://automation.thecheerlab.com
